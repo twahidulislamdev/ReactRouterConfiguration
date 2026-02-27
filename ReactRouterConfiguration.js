@@ -1,13 +1,7 @@
-/**
- * REACT ROUTER DOM - SETUP PROCESS
- * =================================
- */
-
 // STEP 1: INSTALLATION
 // --------------------
 // Run in terminal:
 // npm install react-router-dom
-
 
 // STEP 2: WRAPPING APP WITH BROWSERROUTER
 // ----------------------------------------
@@ -25,7 +19,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </BrowserRouter>
   </React.StrictMode>
 )
-
 
 // STEP 3: DEFINING ROUTES
 // -----------------------
@@ -58,16 +51,13 @@ function App() {
     </Routes>
   )
 }
-
 export default App
-
 
 // STEP 4: CREATING NAVIGATION LINKS
 // ---------------------------------
 // File: components/Navbar.jsx
 
 import { Link } from 'react-router-dom'
-
 function Navbar() {
   return (
     <nav>
@@ -78,20 +68,16 @@ function Navbar() {
     </nav>
   )
 }
-
 export default Navbar
-
 
 // STEP 5: USING ROUTE PARAMETERS
 // ------------------------------
 // File: pages/ProductDetail.jsx
 
 import { useParams } from 'react-router-dom'
-
+// Get the :id parameter from URL
+const { id } = useParams()  
 function ProductDetail() {
-  // Get the :id parameter from URL
-  const { id } = useParams()
-  
   return (
     <div>
       <h1>Product Details</h1>
@@ -99,9 +85,7 @@ function ProductDetail() {
     </div>
   )
 }
-
 export default ProductDetail
-
 
 // STEP 6: PROGRAMMATIC NAVIGATION
 // -------------------------------
@@ -111,15 +95,12 @@ import { useNavigate } from 'react-router-dom'
 
 function Home() {
   const navigate = useNavigate()
-  
   const goToAbout = () => {
     navigate('/about')
   }
-  
   const goBack = () => {
     navigate(-1) // Go to previous page
   }
-  
   return (
     <div>
       <h1>Home Page</h1>
@@ -128,7 +109,6 @@ function Home() {
     </div>
   )
 }
-
 export default Home
 
 
@@ -137,7 +117,6 @@ export default Home
 // File: components/Header.jsx
 
 import { NavLink } from 'react-router-dom'
-
 function Header() {
   return (
     <header>
@@ -164,7 +143,6 @@ function Header() {
     </header>
   )
 }
-
 export default Header
 
 
